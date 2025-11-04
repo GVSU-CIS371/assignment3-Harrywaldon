@@ -14,6 +14,49 @@
             />
             {{ temp }}
           </label>
+          <p>{{ beverageStore.currentBase.name }}</p>
+        </template>
+      </li>
+      <li>
+        <template v-for="base in beverageStore.bases" :key="base.id">
+          <label>
+            <input
+              type="radio"
+              name="base"
+              :id="`r${base.id}`"
+              :value="base.id"
+              v-model="beverageStore.currentBase.id"
+            />
+            {{ base.name }}                
+          </label>        
+        </template>
+      </li>
+      <li>
+        <template v-for="creamer in beverageStore.creamers" :key="creamer.id">
+          <label>
+            <input
+              type="radio"
+              name="creamer"
+              :id="`r${creamer.id}`"
+              :value="creamer.id"
+              v-model="beverageStore.currentCreamer"
+            />
+            {{ creamer.name }}
+          </label>
+        </template>
+      </li>
+      <li>
+        <template v-for="syrup in beverageStore.syrups" :key="syrup.id">
+          <label>
+            <input
+              type="radio"
+              name="syrup"
+              :id="`r${syrup.id}`"
+              :value="syrup.id"
+              v-model="beverageStore.currentSyrup"
+            />
+            {{ syrup.name }}
+          </label>
         </template>
       </li>
     </ul>
