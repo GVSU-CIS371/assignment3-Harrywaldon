@@ -3,17 +3,24 @@ import tempretures from "../data/tempretures.json";
 import bases from "../data/bases.json";
 import creamers from "../data/creamers.json";
 import syrups from "../data/syrups.json";
+import type { 
+  BaseBeverageType,
+  BeverageType,
+  CreamerType, 
+  SyrupType,
+} from "../types/beverage";
+
 
 export const useBeverageStore = defineStore("BeverageStore", {
   state: () => ({
     temps: tempretures,
-    currentTemp: tempretures[0],
-    bases: bases,
-    currentBase: bases[0],
-    creamers: creamers,
-    currentCreamer: creamers[0],
-    syrups: syrups,
-    currentSyrup: syrups[0],
+    currentTemp: tempretures[1],
+    bases: bases as BaseBeverageType[],
+    currentBase: bases[0] as BaseBeverageType,
+    creamers: creamers as CreamerType[],
+    currentCreamer: creamers[0] as CreamerType,
+    syrups: syrups as SyrupType[],
+    currentSyrup: syrups[0] as SyrupType,
 
     savedBeverages: [] as {
       name: string;
@@ -59,5 +66,5 @@ export const useBeverageStore = defineStore("BeverageStore", {
         this.syrups.find((s) => s.id === syrupId) || this.syrups[0];
     },
   },
-  persist: true,
+  persist: false,
 });

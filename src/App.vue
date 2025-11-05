@@ -13,10 +13,11 @@
               v-model="beverageStore.currentTemp"
             />
             {{ temp }}
-          </label>
-          <p>{{ beverageStore.currentBase.name }}</p>
+          </label>        
         </template>
       </li>
+    </ul>
+    <ul>
       <li>
         <template v-for="base in beverageStore.bases" :key="base.id">
           <label>
@@ -24,13 +25,15 @@
               type="radio"
               name="base"
               :id="`r${base.id}`"
-              :value="base.id"
-              v-model="beverageStore.currentBase.id"
+              :value="base"
+              v-model="beverageStore.currentBase"
             />
             {{ base.name }}                
           </label>        
         </template>
       </li>
+    </ul>
+    <ul>
       <li>
         <template v-for="creamer in beverageStore.creamers" :key="creamer.id">
           <label>
@@ -38,13 +41,15 @@
               type="radio"
               name="creamer"
               :id="`r${creamer.id}`"
-              :value="creamer.id"
+              :value="creamer"
               v-model="beverageStore.currentCreamer"
             />
             {{ creamer.name }}
           </label>
         </template>
       </li>
+    </ul>
+    <ul>
       <li>
         <template v-for="syrup in beverageStore.syrups" :key="syrup.id">
           <label>
@@ -52,7 +57,7 @@
               type="radio"
               name="syrup"
               :id="`r${syrup.id}`"
-              :value="syrup.id"
+              :value="syrup"
               v-model="beverageStore.currentSyrup"
             />
             {{ syrup.name }}
