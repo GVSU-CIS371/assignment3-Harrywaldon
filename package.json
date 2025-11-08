@@ -10,12 +10,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "pinia": "^3.0.1",
+    "pinia": "^3.0.3",
     "pinia-plugin-persistedstate": "^4.2.0",
     "vue": "^3.4.19"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/tsconfig": "^0.3.0",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
